@@ -73,19 +73,39 @@ class ProductProvider extends Component {
         })
     }
     increment = (id) => {
-        console.log('incre')
     }
     decrement = (id) => {
         console.log('de-incre')
     }
     removeItem = (id) => {
-        console.log('remove')
+        let tempProducts = [...this.state.products];
+        let tempCart = [...this.state.cart];
+
+        tempCart = tempCart.filter(item => item.id !== id);
+
+        const index = tempProducts.indexOf(this.getItem(id));
+        let removedProduct = tempProducts[index];
+
+        removedProduct.inCart = false;
+        removedProduct.count = 0;
+        removedProduct.total = 0;
+
+        this.setState(() => {
+            return {
+                cart: [...tempCart],
+                products: [...tempProducts]
+            }
+        }, () => {
+            this.addTotals()
+        })
+
     }
     clearCart = () => {
         this.setState(() => {
             return { cart: [] }
         }, () => {
-
+            this.setProducts();
+            this.addTotals();
         })
     }
     addTotals = () => {
