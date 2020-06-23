@@ -4,10 +4,11 @@
   --mainWhite: #f3f3f3;
   --mainDark: #232528;
   --mainYellow: #ffa400;
+  --mainGray: #D3D3D3;
 }
 body {
   font-family: "Open Sans", sans-serif !important;
-  background: var(--mainWhite) !important;
+  background: var(--mainGray) !important;
   color: var(--mainDark) !important;
 }
 .text-title {
