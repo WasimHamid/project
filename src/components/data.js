@@ -14,7 +14,7 @@ export const storeProducts = [
         id: 2,
         title: "Football Shirt",
         img: "img/Shirt.jpg",
-        price: 13,
+        price: 14,
         info:
             "A black football shirt with the Playermade Logo",
         count: 0,
@@ -35,7 +35,7 @@ export const storeProducts = [
         id: 4,
         title: "Football Shorts",
         img: "img/Short.jpg",
-        price: 7,
+        price: 11,
         info:
             "A black football short with the Playermade Logo",
         inCart: false,
@@ -46,7 +46,7 @@ export const storeProducts = [
         id: 5,
         title: "Waterbottle",
         img: "img/Bottle.jpg",
-        price: 24,
+        price: 7,
         info:
             "A Waterbottle with the Playermade Logo",
         inCart: false,
@@ -57,7 +57,7 @@ export const storeProducts = [
         id: 6,
         title: "Captain Armband",
         img: "img/Captain.jpg",
-        price: 17,
+        price: 3,
         info:
             "A Captain Armband with the Playermade Logo",
         inCart: false,
