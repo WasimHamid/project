@@ -31,7 +31,7 @@ export default class Details extends Component {
                                         </strong>
                                     </h4>
                                     <p className='text-capitalize font-weight-bold mt-3 mb-0'>
-                                        some info about product:
+                                        Some information about the product:
                                      </p>
                                     <p className='text-muted lead'>
                                         {info}
@@ -50,7 +50,7 @@ export default class Details extends Component {
                                                 value.openModal(id)
                                             }}
                                         >
-                                            {inCart ? 'inCart' : 'add to cart'}
+                                            {inCart ? 'Added to Cart' : 'Add to cart'}
                                         </ButtonContainer>
                                     </div>
                                 </div>
