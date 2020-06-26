@@ -75,6 +75,7 @@ export default function CartTotals({ value, history }) {
                             token={makePayment}
                             name="Playermade store"
                             amount={cartTotal * 100}
+                            currency="GBP"
                             shippingAddress
                             billingAddress
                         />
