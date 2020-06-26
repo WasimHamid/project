@@ -12,9 +12,6 @@ export default function CartTotals({ value, history }) {
         productBy: "playermade"
     });
 
-    const refresh = (clearCart) => {
-        clearCart = { clearCart }
-    }
 
     const makePayment = token => {
         const body = {
@@ -32,7 +29,6 @@ export default function CartTotals({ value, history }) {
         }).then(response => {
             console.log("RESPONSE", response)
             const { status } = response;
-            refresh()
             console.log("STATUS", status)
         })
             .catch(error => console.log(error))
