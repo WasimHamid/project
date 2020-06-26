@@ -69,7 +69,7 @@ export default function CartTotals({ value, history }) {
                         <PayPalButton total={cartTotal} clearCart={clearCart} history={history} />
                         <br />
                         <StripeCheckout
-                            stripeKey={process.env.REACT_APP_KEY}
+                            stripeKey={process.env.development.REACT_APP_KEY}
                             token={makePayment}
                             name="Playermade store"
                             amount={cartTotal * 100}
