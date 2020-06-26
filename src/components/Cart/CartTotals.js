@@ -21,7 +21,7 @@ export default function CartTotals({ value, history }) {
             "Content-Type": "application/json"
         }
 
-        return fetch(`https://playermade-store.herokuapp.com/`, {
+        return fetch(`https://playermade-store.herokuapp.com/payment`, {
             method: "POST",
             headers,
             body: JSON.stringify(body)
