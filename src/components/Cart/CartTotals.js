@@ -12,6 +12,10 @@ export default function CartTotals({ value, history }) {
         productBy: "playermade"
     });
 
+    const refresh = (clearCart) => {
+        clearCart = { clearCart }
+    }
+
     const makePayment = token => {
         const body = {
             token,
@@ -28,6 +32,7 @@ export default function CartTotals({ value, history }) {
         }).then(response => {
             console.log("RESPONSE", response)
             const { status } = response;
+            refresh()
             console.log("STATUS", status)
         })
             .catch(error => console.log(error))
@@ -70,11 +75,10 @@ export default function CartTotals({ value, history }) {
                         <br />
                         <StripeCheckout
                             stripeKey="pk_test_51GxCClIrZ1H4aOKzjntxPGIRNKBN2zIbpsI0u9IfHIFHWviyj5ffooi1Q5BYXxSvcKeZa2faqjWKxRjc3OEuWYVA00C9AZ9nuc"
-                            clearCart={clearCart}
-                            history={history}
                             token={makePayment}
                             name="Playermade store"
                             amount={cartTotal * 100}
+                            currency="GBP"
                             shippingAddress
                             billingAddress
                         />
