@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import PayPalButton from './PayPalButton'
+// import PayPalButton from './PayPalButton'
 import StripeCheckout from 'react-stripe-checkout'
 
 export default function CartTotals({ value, history }) {
@@ -66,7 +66,7 @@ export default function CartTotals({ value, history }) {
                             </span>
                         </h5>
                         <br />
-                        <PayPalButton total={cartTotal} clearCart={clearCart} history={history} />
+                        {/* <PayPalButton total={cartTotal} clearCart={clearCart} history={history} /> */}
                         <br />
                         <StripeCheckout
                             stripeKey="pk_test_51GxCClIrZ1H4aOKzjntxPGIRNKBN2zIbpsI0u9IfHIFHWviyj5ffooi1Q5BYXxSvcKeZa2faqjWKxRjc3OEuWYVA00C9AZ9nuc"
