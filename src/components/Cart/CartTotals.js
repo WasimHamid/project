@@ -1,9 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import PayPalButton from './PayPalButton'
+import StripeCheckout from 'react-stripe-checkout'
 
 export default function CartTotals({ value, history }) {
     const { cartSubTotal, cartTax, cartTotal, clearCart } = value
+
+    const [product, setProduct] = useState({
+        name: "Playermade store",
+        // price: 48,
+        productBy: "playermade"
+    });
+
+    const makePayment = token => {
+        const body = {
+            token,
+            product
+        }
+        const headers = {
+            "Content-Type": "application/json"
+        }
+
+        return fetch(`http://localhost:8282/payment`, {
+            method: "POST",
+            headers,
+            body: JSON.stringify(body)
+        }).then(response => {
+            console.log("RESPONSE", response)
+            const { status } = response;
+            console.log("STATUS", status)
+        })
+            .catch(error => console.log(error))
+    }
+
+
     return (
         <>
             <div className="container">
@@ -37,6 +67,23 @@ export default function CartTotals({ value, history }) {
                         </h5>
                         <br />
                         <PayPalButton total={cartTotal} clearCart={clearCart} history={history} />
+                        <br />
+                        <StripeCheckout
+                            stripeKey={process.env.REACT_APP_KEY}
+                            token={makePayment}
+                            name="Playermade store"
+                            amount={cartTotal * 100}
+                            shippingAddress
+                            billingAddress
+                            clearCart={clearCart}
+                            history={history}
+                        >
+                            {/* <button className="btn-large blue">Buy for ${product.price}</button> */}
+                        </StripeCheckout>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
                     </div>
                 </div>
             </div>
