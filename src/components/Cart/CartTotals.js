@@ -12,26 +12,26 @@ export default function CartTotals({ value, history }) {
         productBy: "playermade"
     });
 
-    const makePayment = token => {
-        const body = {
-            token,
-            product
-        }
-        const headers = {
-            "Content-Type": "application/json"
-        }
+    // const makePayment = token => {
+    //     const body = {
+    //         token,
+    //         product
+    //     }
+    //     const headers = {
+    //         "Content-Type": "application/json"
+    //     }
 
-        return fetch(`http://localhost:8282/payment`, {
-            method: "POST",
-            headers,
-            body: JSON.stringify(body)
-        }).then(response => {
-            console.log("RESPONSE", response)
-            const { status } = response;
-            console.log("STATUS", status)
-        })
-            .catch(error => console.log(error))
-    }
+    //     return fetch(`http://localhost:8282/payment`, {
+    //         method: "POST",
+    //         headers,
+    //         body: JSON.stringify(body)
+    //     }).then(response => {
+    //         console.log("RESPONSE", response)
+    //         const { status } = response;
+    //         console.log("STATUS", status)
+    //     })
+    //         .catch(error => console.log(error))
+    // }
 
 
     return (
@@ -70,7 +70,7 @@ export default function CartTotals({ value, history }) {
                         <br />
                         <StripeCheckout
                             stripeKey="pk_test_51GxCClIrZ1H4aOKzjntxPGIRNKBN2zIbpsI0u9IfHIFHWviyj5ffooi1Q5BYXxSvcKeZa2faqjWKxRjc3OEuWYVA00C9AZ9nuc"
-                            token={makePayment}
+                            // token={makePayment}
                             name="Playermade store"
                             amount={cartTotal * 100}
                             shippingAddress
