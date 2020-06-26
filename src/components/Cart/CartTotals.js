@@ -70,16 +70,14 @@ export default function CartTotals({ value, history }) {
                         <br />
                         <StripeCheckout
                             stripeKey="pk_test_51GxCClIrZ1H4aOKzjntxPGIRNKBN2zIbpsI0u9IfHIFHWviyj5ffooi1Q5BYXxSvcKeZa2faqjWKxRjc3OEuWYVA00C9AZ9nuc"
+                            clearCart={clearCart}
+                            history={history}
                             token={makePayment}
                             name="Playermade store"
                             amount={cartTotal * 100}
                             shippingAddress
                             billingAddress
-                            clearCart={clearCart}
-                            history={history}
-                        >
-                            {/* <button className="btn-large blue">Buy for ${product.price}</button> */}
-                        </StripeCheckout>
+                        />
                         <br />
                         <br />
                         <br />
