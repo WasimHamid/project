@@ -5,7 +5,7 @@ import StripeCheckout from 'react-stripe-checkout'
 
 export default function CartTotals({ value, history }) {
     const { cartSubTotal, cartTax, cartTotal, clearCart } = value
-
+    // eslint-disable-next-line
     const [product, setProduct] = useState({
         name: "Playermade store",
         // price: 48,
