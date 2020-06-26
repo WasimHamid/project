@@ -69,7 +69,7 @@ export default function CartTotals({ value, history }) {
                         <PayPalButton total={cartTotal} clearCart={clearCart} history={history} />
                         <br />
                         <StripeCheckout
-                            stripeKey={"pk_test_51GxCClIrZ1H4aOKzjntxPGIRNKBN2zIbpsI0u9IfHIFHWviyj5ffooi1Q5BYXxSvcKeZa2faqjWKxRjc3OEuWYVA00C9AZ9nuc"}
+                            stripeKey="pk_test_51GxCClIrZ1H4aOKzjntxPGIRNKBN2zIbpsI0u9IfHIFHWviyj5ffooi1Q5BYXxSvcKeZa2faqjWKxRjc3OEuWYVA00C9AZ9nuc"
                             token={makePayment}
                             name="Playermade store"
                             amount={cartTotal * 100}
