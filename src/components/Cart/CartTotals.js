@@ -36,7 +36,8 @@ export default function CartTotals({ value, history }) {
 
     function Reset(value) {
         if(makePayment) { 
-            clearCart(history)
+            clearCart(history.push('/'))
+            
         } else {
             console.log('error')
         }
