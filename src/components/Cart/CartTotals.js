@@ -4,12 +4,11 @@ import PayPalButton from './PayPalButton'
 import StripeCheckout from 'react-stripe-checkout'
 
 export default function CartTotals({ value, history }) {
-    const { cartSubTotal, cartTax, cartTotal, clearCart } = value
+    const { cartSubTotal, cartTax, cartTotal, clearCart, products } = value
     // eslint-disable-next-line
     const [product, setProduct] = useState({
         name: "Playermade store",
-        // price: 48,
-        productBy: "playermade"
+        products
     });
 
 
@@ -29,11 +28,19 @@ export default function CartTotals({ value, history }) {
         }).then(response => {
             console.log("RESPONSE", response)
             const { status } = response;
+            Reset()
             console.log("STATUS", status)
         })
             .catch(error => console.log(error))
     }
 
+    function Reset(value) {
+        if(makePayment) { 
+            clearCart(history)
+        } else {
+            console.log('error')
+        }
+    }
 
     return (
         <>
