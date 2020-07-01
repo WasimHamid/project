@@ -46,7 +46,7 @@ export const storeProducts = [
         id: 5,
         title: "Waterbottle",
         img: "img/Bottle.jpg",
-        price: 7,
+        price: 3,
         info:
             "A Waterbottle with the Playermade Logo",
         inCart: false,
@@ -57,7 +57,7 @@ export const storeProducts = [
         id: 6,
         title: "Captain Armband",
         img: "img/Captain.jpg",
-        price: 3,
+        price: 2,
         info:
             "A Captain Armband with the Playermade Logo",
         inCart: false,
