@@ -62,6 +62,13 @@ export default function CartTotals({ value, history }) {
                         </h5>
                         <h5>
                             <span className="text-title">
+                                Tax :<span>
+                                    <strong>£0</strong>
+                                </span>
+                            </span>
+                        </h5>
+                        <h5>
+                            <span className="text-title">
                                 total :<span>
                                     <strong>£{cartTotal}</strong>
                                 </span>
